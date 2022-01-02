@@ -27,7 +27,7 @@ if(!defined("FFGB_NO_HEADERS"))
 <html>
 <head>
 
-<title>Flat File Guestbook from AdvanceByDesign</title>
+<title>Condomínio Green Tower - Livro de Ocorrências Portaria</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" type="text/css" href="ffgb_styles.css">
 
@@ -110,14 +110,14 @@ if(isset($_GET['guestbook']) && is_numeric($_GET['guestbook']) &&
 /* Show a pagelist if more than one book */
 if($ffgb_count>1)
 {
-	echo "<div class=\"pagelist\">\nGuestbook pages: &nbsp;";
-	if($ffgb_view>1) { echo "<a href=\"{$_SERVER['PHP_SELF']}?guestbook=".($ffgb_view-1)."\">Back</a> "; }
+	echo "<div class=\"pagelist\">\nLivro de Ocorrências - Páginas: &nbsp;";
+	if($ffgb_view>1) { echo "<a href=\"{$_SERVER['PHP_SELF']}?guestbook=".($ffgb_view-1)."\">Voltar</a> "; }
 	for($i=1;$i<=$ffgb_count;$i++)
 	{
 		if($i==$ffgb_view) { echo "<b>{$i}</b> "; }
 		else { echo "<a href=\"{$_SERVER['PHP_SELF']}?guestbook={$i}\">{$i}</a> "; }
 	}	
-	if($ffgb_view<$ffgb_count) { echo "<a href=\"{$_SERVER['PHP_SELF']}?guestbook=".($ffgb_view+1)."\">Next</a> "; }
+	if($ffgb_view<$ffgb_count) { echo "<a href=\"{$_SERVER['PHP_SELF']}?guestbook=".($ffgb_view+1)."\">Próximo</a> "; }
 	echo "</div>\n";
 }
 
@@ -162,26 +162,25 @@ if(ACCEPT_NEW_COMMENTS)
 		if($ffgb_post['name']!=$_POST['ffgb_name'] || strlen($_POST['ffgb_name'])<3 ||
 			strlen($_POST['ffgb_name'])>30)
 		{
-			$err.= "<li>Please provide a name which does not include any special characters and is ";
-			$err.= "between 3 and 30 characters in length.</li>\n";
+			$err.= "<li>Por favor entre com um nome sem nenhum caracter especial e com mínimo de  ";
+			$err.= "3 e máximo de 30 caracteres.</li>\n";
 		}
 		if(strlen($_POST['ffgb_subject'])>SUBJECT_MAX_LENGTH)
 		{
-			$err.= "<li>Your comment subject cannot be longer than ".SUBJECT_MAX_LENGTH." characters.</li>\n";
+			$err.= "<li>Seu assunto não pode ser maior que ".SUBJECT_MAX_LENGTH." caracteres.</li>\n";
 		}
 		if(strlen($_POST['ffgb_message'])>COMMENT_MAX_LENGTH || strlen($_POST['ffgb_message'])<4)
 		{
-			$err.= "<li>Your comment must be between 4 and ".number_format(COMMENT_MAX_LENGTH);
-			$err.= " characters in length.</li>\n";
+			$err.= "<li>Seu comentário deve estar entre 4 e ".number_format(COMMENT_MAX_LENGTH);
+			$err.= " caracteres.</li>\n";
 		}
 		
 		if(!strlen($err))
 		{
 			$out_book = ($comment_count>=COMMENTS_PER_BOOK?($ffgb_count+1):$ffgb_count);
-			$msg = "Your comment has been posted. ";
-			$msg.= (COMMENTS_REQUIRE_VALIDATION?"Your comment must be validated by an administrator before
-				it will be visible. ":"");
-			$msg.= "<i>Thank you!</i>\n";
+			$msg = "Seu comentário foi enviado com sucesso. ";
+			$msg.= (COMMENTS_REQUIRE_VALIDATION?"Seu comentário deve ser validado pelo administrador antes do envio. ":"");
+			$msg.= "<i>Obrigado!</i>\n";
 			
 			$fp_post = @fopen('ffgb_comments/ffgb_'.$out_book.'_tmp.php', "w");
 			@fwrite($fp_post, "<?php\n");
@@ -218,7 +217,7 @@ if(ACCEPT_NEW_COMMENTS)
 				"content-transfer-encoding;", "to;", "bcc;", "cc;");
 				$content = str_ireplace($replace_from,$replace_to,$ffgb_post['message']);
 		
-				@mail(EMAIL_TO, "Guestbook: New comment from {$ffgb_post['name']}", "Your guestbook at {$_SERVER['SERVER_NAME']} has received a new comment!".(COMMENTS_REQUIRE_VALIDATION?" As new comments require validation, you must login to the Administration Area to approve this comment.":"")." The comment is as follows:\n\nFrom: {$ffgb_post['name']}\nEmail: {$ffgb_post['email']}\nURL: {$ffgb_post['url']}\nSubject: {$ffgb_post['subject']}\n\nMessage:\n{$ffgb_post['message']}", "From: donotreply@{$_SERVER['SERVER_NAME']}");
+				@mail(EMAIL_TO, "Livro de ococorrência: Novo registro de {$ffgb_post['name']}", "Seu registro em {$_SERVER['SERVER_NAME']} foi recebido".(COMMENTS_REQUIRE_VALIDATION?" Como novo registro é requerido validação do adm, você deve logar como administrador para aprovar o registro.":"")." Registro esta como:\n\nDe: {$ffgb_post['name']}\nEmail: {$ffgb_post['email']}\nURL: {$ffgb_post['url']}\nAssunto: {$ffgb_post['subject']}\n\nMensagem\n{$ffgb_post['message']}", "De: donotreply@{$_SERVER['SERVER_NAME']}");
 			}
 		}
 	}
@@ -243,9 +242,9 @@ if(ACCEPT_NEW_COMMENTS)
 	{
 echo <<<ENDHTML
 	<table border="0" cellpadding="2px" cellspacing="0" class="comment_accepted">
-	<tr><td><h2>Comment Posted</h2>
+	<tr><td><h2>Registro Postadod</h2>
 		<p>{$msg}</p>
-		<ul><li><a href="{$_SERVER['PHP_SELF']}">Click here to update the Guestbook</a></li></ul>
+		<ul><li><a href="{$_SERVER['PHP_SELF']}">Clique aqui para atualizar o livro de ocorrências</a></li></ul>
 		</td></tr>
 	</table>
 ENDHTML;
@@ -256,8 +255,8 @@ ENDHTML;
 		{
 echo <<<ENDHTML
 	<table border="0" cellpadding="2px" cellspacing="0" class="comment_error">
-	<tr><td><h2>Comment Refused</h2>
-		<p>The following error(s) have prevented your comment being posted:\n
+	<tr><td><h2>Comentário Recusado</h2>
+		<p>O seguinte erro(s) ocorreu em seu comentário:\n
 		<ul>{$err}</ul></p>
 		</td></tr>
 	</table>
@@ -265,10 +264,10 @@ ENDHTML;
 		}
 
 echo <<<ENDHTML
-	<fieldset><legend>Post a new comment</legend>
+	<fieldset><legend>Envio um novo comentário</legend>
 	<form method="post" action="{$_SERVER['PHP_SELF']}#newcomment">
 	<table border="0" cellpadding="2px" cellspacing="0" class="comment_form">
-	<tr><td>Your name <span class="reqfield">*</span></td>
+	<tr><td>Seu Nome <span class="reqfield">*</span></td>
 		<td align="right"><input type="text" maxlength="100" value="{$ffgb_post['name']}" name="ffgb_name"></td></tr>
 	<tr><td>Email address {$htm_rf_email}</td>
 		<td align="right"><input type="text" maxlength="250" value="{$ffgb_post['email']}" name="ffgb_email"></td></tr>
@@ -299,9 +298,9 @@ ENDHTML;
 echo <<<ENDHTML
 	<br>
 	<span class="about_text">
-		<a href="http://www.advancebydesign.com" target="_blank">PHP Flat File Guestbook
-		Script</a> from AdvanceByDesign.
-		<a href="ffgb_admin.php"><i>Manage this Guestbook</i></a>
+		<a href="http://www.advancebydesign.com" target="_blank">Livro de Ocorrências Condomínio Green Tower.
+		</a>
+		<a href="ffgb_admin.php"><i>Gerencias este livro de ocorrênciask</i></a>
 	</span>
 ENDHTML;
 
