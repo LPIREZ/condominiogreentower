@@ -1,0 +1,29 @@
+html {
+    font: 15pt Arial;
+}
+
+body{
+    background: no-repeat center/100% url("wallpaper-cps.jpg") ;
+}
+
+div::before {
+    content: "FATEC CONDOMINIOS";
+    font: 10pt Arial;
+    font-weight: bold;
+    color: white;
+    background-color: slategrey;
+    padding: 5px;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    width: 560px;
+    display: block;
+}
+
+div{
+    background-color: rgba(255,255,255,.75);
+    margin: 100px auto 100px auto;
+    width: 550px;
+    height: 300px;
+    padding: 10px;
+}

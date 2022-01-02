@@ -1,0 +1,199 @@
+
+
+body
+{
+	padding:10px;
+	margin:0;
+	background-color:#ffffff;
+	font-size:100%;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+h2
+{
+	padding:2px;
+	margin:0;
+	font-size:1.4em;
+	background-color:#eef;
+}
+
+th
+{
+	font-size:0.9em;
+	font-weight:bold;
+	border:solid #999;
+	border-width:0 0 2px 0;
+}
+td
+{
+	font-size:0.8em;
+}
+a,a:link,a:visited
+{
+	color:#0000CC;
+	text-decoration:none;
+}
+a:hover,a:active
+{
+	color:#CC0000;
+}
+
+.label_author
+{
+	text-align:right;
+	border-top:1px solid #ccf;
+}
+
+.comment_post
+{
+	font-size:0.8em;
+	width:600px;
+	padding:5px;
+	margin:2px;
+	border:3px double #aad;
+}
+
+.comment_post p
+{
+	padding:10px;
+}
+
+.pagelist
+{
+	width:600px;
+	text-align:right;
+	font-size:0.8em;
+	padding:5px;
+	margin:2px;
+	border:3px double #aad;
+	background-color:#eef;
+}
+.pagelist a,.pagelist a:link,.pagelist a:visited
+{
+	padding:2px 4px 2px 4px;
+	margin:1px;
+	border:1px solid #CCCCFF;
+	background-color:#FAFAFF;
+}
+.pagelist a:hover,.pagelist a:active
+{
+	border-color:#FFCCCC;
+	background-color:#FFFAFA;
+}
+
+.comment_form
+{
+	width:580px;
+}
+.comment_form  textarea
+{
+	width:580px;
+}
+.comment_accepted
+{
+	width:600px;
+	border:3px double #99CC99;
+	background-color:#EEFFDD;
+	padding:5px;
+	margin:2px;
+}
+.comment_error
+{
+	width:600px;
+	border:3px double #CC9999;
+	background-color:#FFEEEE;
+	padding:5px;
+	margin:2px;
+}
+
+.login_form
+{
+	width:350px;
+	border:3px double #BBBBBB;
+	background-color:#FAFAFA;
+}
+
+.admin_form
+{
+	width:600px;
+	margin:6px 0 6px 0;
+	border:1px solid #E0E0E0;
+	background-color:#F0F0F0;
+}
+.admin_form select
+{
+	width:150px;
+}
+.admin_form input
+{
+	width:150px;
+}
+.admin_form .submitbutton
+{
+	width:150px;
+}
+.admin_list
+{
+	width:600px;
+}
+.admin_list td
+{
+	border:solid #DDD;
+	border-width:0 0 1px 0;
+	font-size:0.7em;
+}
+.admin_list .comment_inactive
+{
+	background-color:#EEEEEE;
+}
+.admin_list .comment_removed
+{
+	background-color:#FFEEEE;
+}
+.admin_list blockquote
+{
+	color:#777777;
+	padding:6px;
+	margin:0;
+}
+
+.logout_link
+{
+	font-size:0.8em;
+	width:600px;
+	text-align:right;
+}
+.logout_link a:link,.logout_link a:visited
+{
+	padding:1px 3px 1px 3px;
+	border:1px solid #DDDDDD;
+	background-color:#FFDDDD;
+	margin:0 0 0 3px;
+}
+.logout_link a:active,.logout_link a:hover
+{
+	background-color:#DDDDFF;
+}
+
+.about_text
+{
+	font-size:0.7em;
+}
+
+fieldset
+{
+	width:600px;
+	padding:5px;
+	margin:2px;
+	border:3px double #CCCCCC;
+	background-color:#FFFFF0;
+}
+
+.edit_comment_form
+{
+	padding:10px;
+	width:600px;
+	margin:10px auto;
+	border-radius:12px;
+	background:#cce;
+}

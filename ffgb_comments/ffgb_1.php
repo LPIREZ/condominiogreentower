@@ -1,0 +1,6 @@
+<?php
+ffgb_add_comment(1, 0, "::1", "1641078843", "eeeee", "", "", "eeee", "weewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewqweewqe qweqw we eq ewq");
+ffgb_add_comment(1, 0, "::1", "1641078830", "wwww", "", "", "wwww", "wwww");
+ffgb_add_comment(1, 0, "::1", "1641077404", "Leandro", "le@le.com", "", "teste", "testes");
+ffgb_add_comment(1, 0, "127.0.0.1", "1309963644", "AdvanceByDesign", "", "http://www.advancebydesign.com", "Guestbook Online", "Congratulations, your new Flat File Guestbook is up and running!  Don\'t forget to stop by our website again soon for more great resources!");
+?>
